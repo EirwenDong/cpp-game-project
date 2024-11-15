@@ -40,12 +40,25 @@ mainwidget::mainwidget(QWidget *parent)
     this->quitbtn->setFlat(true);
     this->quitbtn->move(190,830);
 
-    //槽函数关联
+
+    //设置音频
+    player = new QMediaPlayer(this);
+    playlist = new QMediaPlaylist(this);
+    playlist->addMedia(QUrl::fromLocalFile("music/main.wav"));
+    playlist->setPlaybackMode(QMediaPlaylist::Loop);//设置循环模式
+    player->setPlaylist(playlist);//获取将播放列表要播放的文件
+    player->setVolume(10);
+    player->play();
+
+
+    //槽函数关联 btn
     this->connect(startbtn,SIGNAL(clicked()),this,SLOT(startbtnclick()));
     this->connect(setbtn,SIGNAL(clicked()),this,SLOT(setbtnclick()));
     this->connect(helpbtn,SIGNAL(clicked()),this,SLOT(helpbtnclick()));
     this->connect(quitbtn,SIGNAL(clicked()),this,SLOT(quitbtnclick()));
-    //创建并先隐藏gamewidget
+
+
+    //创建并先隐藏game, set, help widget
     gamew = new gamewidget(this);
     gamew->hide();
 
@@ -55,6 +68,10 @@ mainwidget::mainwidget(QWidget *parent)
     helpw = new helpwidget(this);
     helpw->hide();
 
+    //调节音量
+    this->connect(setw,&setwidget::slider_signal,[=](int v){
+        player->setVolume(v);
+    });
 
 
 }
@@ -88,3 +105,5 @@ void mainwidget::quitbtnclick() //鼠标点击quit按钮时，显示对话框是
     }
 
 }
+
+

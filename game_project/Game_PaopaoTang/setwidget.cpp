@@ -18,11 +18,62 @@ setwidget::setwidget(QWidget *parent) : QWidget(parent)
     this->returnbtn->setFlat(true);
     this->returnbtn->move(1400,820);
 
+    //添加滑动条
+    this->soundslider=new QSlider(Qt::Horizontal,this);
+    this->soundslider->move(300,300);
+    this->soundslider->setFixedSize(1100,200);
+    this->soundslider->setMaximum(100);
+    this->soundslider->setMinimum(0);
+    this->soundslider->setValue(10);
+    this->soundslider->setStyleSheet("QSlider::groove:horizontal{\
+                                                border: 6px solid #80c23a;\
+                                                backgound:#f0db90;\
+                                                height:60px; \
+                                                width:1000;\
+                                                left:30px;\
+                                                right:30px;\
+                                                border-radius:10px;\
+                                                  }\
+                                      QSlider::sub-page:horizontal{\
+                                                background:#85d92e;\
+                                                margin:5px;\
+                                                  }\
+                                      QSlider::add-page:horizontal{\
+                                                background:#a8e06e;\
+                                                margin:5px;\
+                                                  }\
+                                      QSlider::handle:horizontal{\
+                                               width:120px;\
+                                               margin: -30px -60px -30px -60px;\
+                                               border-image: url(img/qslider_btn.png);\
+                                               }\
+                           ");
+    //添加文字说明
+    this->soundlabel=new QLabel(this);
+    this->soundlabel->setText("Use the slider to change volume of background music");
+    this->soundlabel->move(360,290);
+    this->soundlabel->setAlignment(Qt::AlignCenter);
+    QFont soundfont("Arial Black",12);
+    this->soundlabel->setFont(soundfont);
+    QPalette soundpa;
+    soundpa.setColor(QPalette::WindowText,QColor(99,179,16));
+    this->soundlabel->setPalette(soundpa);
+
+
     //点击按钮返回到主界面
     this->connect(returnbtn,SIGNAL(clicked()),this,SLOT(returnbtnclick()));
+    //调节滑动条
+    //this->connect(soundlabel,SIGNAL(valueChanged(int)),this,SLOT(slider_slot(int)));
+    this->connect(soundslider,&QSlider::valueChanged,[=](int v){
+       //this->soundlabel->setFont(QFont(QFont("Arial Black",v)));
+        emit slider_signal(v);
+
+    });
+
 
 }
 void setwidget::returnbtnclick() //定义returnbtn的方法，隐藏游戏界面以达到返回主界面的效果
 {
     this->hide();
 }
+

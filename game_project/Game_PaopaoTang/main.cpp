@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
 
 
     mainwidget w;  //绘制主界面
-
     w.show();
     return a.exec();
+
 }

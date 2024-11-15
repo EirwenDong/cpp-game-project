@@ -10,6 +10,10 @@
 #include "setwidget.h"
 #include "helpwidget.h"
 #include <QMessageBox>
+#include <QDebug>
+
+#include <QtMultimedia/QMediaPlayer>
+#include <QMediaPlaylist> //为了设置音频循环播放
 
 
 class mainwidget : public QWidget //公有继承QWideget
@@ -28,6 +32,8 @@ private:
     gamewidget *gamew;  //界面
     setwidget *setw;
     helpwidget *helpw;
+    QMediaPlayer *player;//音频
+    QMediaPlaylist *playlist;
 
 public slots:
     void startbtnclick(); //自定义槽函数 startbtn点击事件到游戏界面
