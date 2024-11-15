@@ -21,6 +21,7 @@ private:
     QLabel *soundlabel;
     QSlider *soundslider;
 
+
 public slots:
     void returnbtnclick(); //自定义槽函数，点击return按钮返回主界面
 signals:

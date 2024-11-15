@@ -17,9 +17,14 @@ helpwidget::helpwidget(QWidget *parent) : QWidget(parent)
     this->returnbtn->setIconSize(QSize(235,90));
     this->returnbtn->setFlat(true);
     this->returnbtn->move(1400,820);
-
     //点击按钮返回到主界面
     this->connect(returnbtn,SIGNAL(clicked()),this,SLOT(returnbtnclick()));
+
+    this->ruleslabel = new QLabel(this);
+    this->ruleslabel->setPixmap(QPixmap(QPixmap("img/help.png")));
+    this->ruleslabel->setScaledContents(true);
+    this->ruleslabel->move(430,110);
+    this->ruleslabel->show();
 
 }
 void helpwidget::returnbtnclick() //定义returnbtn的方法，隐藏游戏界面以达到返回主界面的效果

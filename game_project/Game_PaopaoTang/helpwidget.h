@@ -15,7 +15,7 @@ public:
 
 private:
     QPushButton *returnbtn; //return按钮
-
+    QLabel *ruleslabel;
 public slots:
     void returnbtnclick(); //自定义槽函数，点击return按钮返回主界面
 

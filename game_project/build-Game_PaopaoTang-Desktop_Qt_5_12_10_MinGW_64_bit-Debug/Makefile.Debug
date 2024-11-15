@@ -475,10 +475,12 @@ debug/moc_mainwidget.cpp: ../Game_PaopaoTang/mainwidget.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/QSlider \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qslider.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtGui/QFont \
 		../Game_PaopaoTang/helpwidget.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qdialog.h \
+		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtCore/QDebug \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia/QMediaPlayer \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia/qmediaplayer.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia/qmediaobject.h \
@@ -621,6 +623,7 @@ debug/moc_setwidget.cpp: ../Game_PaopaoTang/setwidget.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/QSlider \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qslider.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtGui/QFont \
 		debug/moc_predefs.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/bin/moc.exe
 	C:\Qt\Qt5.12.10\5.12.10\mingw73_64\bin\moc.exe $(DEFINES) --include D:/cpp/mygameproject/game_project/build-Game_PaopaoTang-Desktop_Qt_5_12_10_MinGW_64_bit-Debug/debug/moc_predefs.h -IC:/Qt/Qt5.12.10/5.12.10/mingw73_64/mkspecs/win32-g++ -ID:/cpp/mygameproject/game_project/Game_PaopaoTang -IC:/Qt/Qt5.12.10/5.12.10/mingw73_64/include -IC:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets -IC:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia -IC:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtGui -IC:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtANGLE -IC:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtNetwork -IC:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtCore -I. -IC:/Qt/Qt5.12.10/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++ -IC:/Qt/Qt5.12.10/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Qt5.12.10/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include/c++/backward -IC:/Qt/Qt5.12.10/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include -IC:/Qt/Qt5.12.10/Tools/mingw730_64/lib/gcc/x86_64-w64-mingw32/7.3.0/include-fixed -IC:/Qt/Qt5.12.10/Tools/mingw730_64/x86_64-w64-mingw32/include ..\Game_PaopaoTang\setwidget.h -o debug\moc_setwidget.cpp
@@ -991,10 +994,12 @@ debug/main.o: ../Game_PaopaoTang/main.cpp ../Game_PaopaoTang/mainwidget.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/QSlider \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qslider.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtGui/QFont \
 		../Game_PaopaoTang/helpwidget.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qdialog.h \
+		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtCore/QDebug \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia/QMediaPlayer \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia/qmediaplayer.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia/qmediaobject.h \
@@ -1144,10 +1149,12 @@ debug/mainwidget.o: ../Game_PaopaoTang/mainwidget.cpp ../Game_PaopaoTang/mainwid
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/QSlider \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qslider.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtGui/QFont \
 		../Game_PaopaoTang/helpwidget.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/QMessageBox \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qmessagebox.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qdialog.h \
+		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtCore/QDebug \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia/QMediaPlayer \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia/qmediaplayer.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtMultimedia/qmediaobject.h \
@@ -1287,7 +1294,8 @@ debug/setwidget.o: ../Game_PaopaoTang/setwidget.cpp ../Game_PaopaoTang/setwidget
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qabstractbutton.h \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/QSlider \
 		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qslider.h \
-		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qabstractslider.h
+		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/Qt5.12.10/5.12.10/mingw73_64/include/QtGui/QFont
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\setwidget.o ..\Game_PaopaoTang\setwidget.cpp
 
 debug/moc_gamewidget.o: debug/moc_gamewidget.cpp 

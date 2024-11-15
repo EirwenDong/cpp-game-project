@@ -71,6 +71,7 @@ setwidget::setwidget(QWidget *parent) : QWidget(parent)
     });
 
 
+
 }
 void setwidget::returnbtnclick() //定义returnbtn的方法，隐藏游戏界面以达到返回主界面的效果
 {
