@@ -8,19 +8,23 @@
 #include <QPushButton>
 #include <QSlider>
 #include <QFont>
+#include <QDebug>
+#include <QVBoxLayout>
+
+#include <QResizeEvent>
 
 class setwidget : public QWidget
 {
     Q_OBJECT
 public:
     explicit setwidget(QWidget *parent = nullptr);
-    void sendSlot(int vol);
+    void resizeEvent(QResizeEvent *event);
 
 private:
     QPushButton *returnbtn; //return按钮
     QLabel *soundlabel;
     QSlider *soundslider;
-
+    QVBoxLayout *gameout;
 
 public slots:
     void returnbtnclick(); //自定义槽函数，点击return按钮返回主界面

@@ -6,7 +6,6 @@ setwidget::setwidget(QWidget *parent) : QWidget(parent)
     this->setWindowTitle("Crazy Arcade");//设置窗口标题
     this->setWindowIcon(QIcon("img/icon.png"));//设置窗口图标
     this->setAutoFillBackground(true);//当游戏界面显示的时候，完全覆盖主界面
-
     QPalette palette; //调色板对象
     palette.setBrush(QPalette::Background,QBrush(QPixmap("img/gamewindow.jpg")));//用笔刷画mainwindow背景
     this->setPalette(palette);
@@ -17,10 +16,11 @@ setwidget::setwidget(QWidget *parent) : QWidget(parent)
     this->returnbtn->setIconSize(QSize(235,90));
     this->returnbtn->setFlat(true);
     this->returnbtn->move(1400,820);
+    this->returnbtn->setStyleSheet("border:0px");
 
     //添加滑动条
     this->soundslider=new QSlider(Qt::Horizontal,this);
-    this->soundslider->move(300,300);
+    //this->soundslider->move(300,300);
     this->soundslider->setFixedSize(1100,200);
     this->soundslider->setMaximum(100);
     this->soundslider->setMinimum(0);
@@ -51,13 +51,22 @@ setwidget::setwidget(QWidget *parent) : QWidget(parent)
     //添加文字说明
     this->soundlabel=new QLabel(this);
     this->soundlabel->setText("Use the slider to change volume of background music");
-    this->soundlabel->move(360,290);
-    this->soundlabel->setAlignment(Qt::AlignCenter);
+    //this->soundlabel->move(360,290);
     QFont soundfont("Arial Black",12);
     this->soundlabel->setFont(soundfont);
     QPalette soundpa;
     soundpa.setColor(QPalette::WindowText,QColor(99,179,16));
     this->soundlabel->setPalette(soundpa);
+
+    //布局
+    gameout = new QVBoxLayout();
+    gameout->setDirection(QBoxLayout::TopToBottom);
+    gameout->addStretch(3);
+    gameout->addWidget(this->soundlabel,1,Qt::AlignCenter);
+    gameout->addWidget(this->soundslider,3,Qt::AlignCenter);
+    gameout->addStretch(7);
+    this->setLayout(gameout);
+
 
 
     //点击按钮返回到主界面
@@ -72,9 +81,21 @@ setwidget::setwidget(QWidget *parent) : QWidget(parent)
 
 
 
+
+
 }
 void setwidget::returnbtnclick() //定义returnbtn的方法，隐藏游戏界面以达到返回主界面的效果
 {
     this->hide();
 }
 
+void setwidget::resizeEvent(QResizeEvent *event){
+    QPalette palette;
+    palette.setBrush(QPalette::Background,QBrush(QPixmap("img/gamewindow.jpg").scaled(event->size())));
+    this->setPalette(palette);
+
+    this->returnbtn->move(0.80*this->width(),0.86*this->height());
+    this->returnbtn->resize(QSize(0.14*this->width(),0.09*this->height()));
+    this->returnbtn->setIconSize(QSize(QSize(0.14*this->width(),0.09*this->height())));
+
+}

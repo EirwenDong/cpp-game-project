@@ -11,9 +11,12 @@
 #include "helpwidget.h"
 #include <QMessageBox>
 #include <QDebug>
+#include <QResizeEvent>
 
 #include <QtMultimedia/QMediaPlayer>
 #include <QMediaPlaylist> //为了设置音频循环播放
+
+#include <QGridLayout>
 
 
 class mainwidget : public QWidget //公有继承QWideget
@@ -22,7 +25,9 @@ class mainwidget : public QWidget //公有继承QWideget
 
 public:
     mainwidget(QWidget *parent = nullptr);
+    void resizeEvent(QResizeEvent *event);
     ~mainwidget();
+
 
 private:
     QPushButton *startbtn; //按钮 指针类型，内存占用小
@@ -34,6 +39,7 @@ private:
     helpwidget *helpw;
     QMediaPlayer *player;//音频
     QMediaPlaylist *playlist;
+    QGridLayout *mainout;
 
 public slots:
     void startbtnclick(); //自定义槽函数 startbtn点击事件到游戏界面

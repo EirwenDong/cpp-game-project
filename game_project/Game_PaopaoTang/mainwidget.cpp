@@ -6,6 +6,7 @@ mainwidget::mainwidget(QWidget *parent)
     this->resize(1700,956);//设置窗口大小
     this->setWindowTitle("Crazy Arcade");//设置窗口标题
     this->setWindowIcon(QIcon("img/icon.png"));//设置窗口图标
+    this->setAutoFillBackground(true);
 
     QPalette palette; //调色板对象
     palette.setBrush(QPalette::Background,QBrush(QPixmap("img/mainwindow.jpg")));//用笔刷画主界面mainwindow背景
@@ -21,24 +22,29 @@ mainwidget::mainwidget(QWidget *parent)
     this->startbtn->setIconSize(QSize(235,90));
     this->startbtn->setFlat(true);
     this->startbtn->move(190,530);
+    this->startbtn->setStyleSheet("border:0px");
 
     this->setbtn= new QPushButton(this);
     this->setbtn->setIcon(QIcon("img/setbtn.png"));
     this->setbtn->setIconSize(QSize(235,90));
     this->setbtn->setFlat(true);
     this->setbtn->move(190,630);
+    this->setbtn->setStyleSheet("border:0px");
 
     this->helpbtn= new QPushButton(this);
     this->helpbtn->setIcon(QIcon("img/helpbtn.png"));
     this->helpbtn->setIconSize(QSize(235,90));
     this->helpbtn->setFlat(true);
     this->helpbtn->move(190,730);
+    this->helpbtn->setStyleSheet("border:0px");
 
     this->quitbtn= new QPushButton(this);
     this->quitbtn->setIcon(QIcon("img/quitbtn.png"));
     this->quitbtn->setIconSize(QSize(235,90));
     this->quitbtn->setFlat(true);
     this->quitbtn->move(190,830);
+    this->quitbtn->setStyleSheet("border:0px");
+
 
 
     //设置音频
@@ -74,6 +80,8 @@ mainwidget::mainwidget(QWidget *parent)
     });
 
 
+
+
 }
 
 mainwidget::~mainwidget()
@@ -106,4 +114,25 @@ void mainwidget::quitbtnclick() //鼠标点击quit按钮时，显示对话框是
 
 }
 
+void mainwidget::resizeEvent(QResizeEvent *event){
+    QPalette palette;
+    palette.setBrush(QPalette::Background,QBrush(QPixmap("img/mainwindow.jpg").scaled(event->size())));//用笔刷画主界面mainwindow背景
+    this->setPalette(palette);
+    this->gamew->resize(event->size());
+    this->setw->resize(event->size());
+    this->helpw->resize(event->size());
+    this->startbtn->move(0.11*this->width(),0.55*this->height());
+    this->setbtn->move(0.11*this->width(),0.65*this->height());
+    this->helpbtn->move(0.11*this->width(),0.75*this->height());
+    this->quitbtn->move(0.11*this->width(),0.85*this->height());
 
+    this->startbtn->resize(QSize(0.14*this->width(),0.09*this->height()));
+    this->startbtn->setIconSize(QSize(QSize(0.14*this->width(),0.09*this->height())));
+    this->setbtn->resize(QSize(0.14*this->width(),0.09*this->height()));
+    this->setbtn->setIconSize(QSize(QSize(0.14*this->width(),0.09*this->height())));
+    this->helpbtn->resize(QSize(0.14*this->width(),0.09*this->height()));
+    this->helpbtn->setIconSize(QSize(QSize(0.14*this->width(),0.09*this->height())));
+    this->quitbtn->resize(QSize(0.14*this->width(),0.09*this->height()));
+    this->quitbtn->setIconSize(QSize(QSize(0.14*this->width(),0.09*this->height())));
+
+}
